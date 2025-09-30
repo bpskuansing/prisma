@@ -9,6 +9,13 @@
     --header-text: #fff;
     --border-color: #dee2e6;
     --table-header-bg: #e9ecef;
+
+    /* Risk Colors */
+    --sangat-tinggi: #dc3545;
+    --tinggi: #fd7e14;
+    --sedang: #ffc107;
+    --rendah: #17a2b8;
+    --sangat-rendah: #28a745;
 }
 
 * {
@@ -44,6 +51,7 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .nav-btn, .dropdown .nav-btn {
@@ -97,7 +105,7 @@ main {
     padding: 2rem;
 }
 
-#risk-list-container h2, #add-risk-container h2 {
+h2 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: var(--header-bg);
@@ -111,6 +119,7 @@ main {
     width: 100%;
     border-collapse: collapse;
     background: #fff;
+    font-size: 0.9rem;
 }
 
 #risk-table th, #risk-table td {
@@ -148,6 +157,9 @@ main {
 }
 
 /* Form Styling */
+#add-risk-container h2, #guidelines-container h2{
+     margin-bottom: 2.5rem;
+}
 #add-risk-form {
     max-width: 900px;
     margin: 0 auto;
@@ -215,6 +227,90 @@ main {
 
 .submit-btn:hover {
     background-color: #0056b3;
+}
+
+/* Guidelines Page Styling */
+#guidelines-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.guideline-section {
+    margin-bottom: 3rem;
+}
+
+.guideline-section h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+.guideline-section h4 {
+    font-size: 1.2rem;
+    color: var(--header-bg);
+    margin-bottom: 0.5rem;
+}
+.guideline-section p {
+    margin-bottom: 1rem;
+}
+.guideline-section ul {
+    margin-left: 20px;
+    margin-bottom: 1rem;
+}
+.guideline-section ul li {
+    margin-bottom: 0.5rem;
+}
+.guideline-table, .risk-matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+.guideline-table th, .guideline-table td, .risk-matrix-table th, .risk-matrix-table td {
+    border: 1px solid var(--border-color);
+    padding: 0.8rem;
+    text-align: center;
+}
+.guideline-table thead, .risk-matrix-table thead {
+    background-color: var(--table-header-bg);
+}
+.guideline-table td:nth-child(2), .guideline-table td:nth-child(3) {
+    text-align: left;
+}
+
+.risk-matrix-table {
+    table-layout: fixed;
+}
+.risk-matrix-table caption {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    caption-side: top;
+}
+.risk-matrix-table th.rotate {
+    height: 140px;
+    white-space: nowrap;
+}
+.risk-matrix-table th.rotate > div {
+    transform: rotate(-90deg);
+    width: 30px;
+}
+.risk-matrix-table td, .level-table td {
+    font-weight: bold;
+    color: white;
+}
+.sangat-tinggi { background-color: var(--sangat-tinggi); }
+.tinggi { background-color: var(--tinggi); }
+.sedang { background-color: var(--sedang); color: #333 !important; }
+.rendah { background-color: var(--rendah); }
+.sangat-rendah { background-color: var(--sangat-rendah); }
+
+.level-table th {
+    text-align: center !important;
 }
 
 footer {

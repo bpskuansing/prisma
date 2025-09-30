@@ -14,6 +14,7 @@
     <nav>
         <button id="show-risk-list-btn" class="nav-btn active">Daftar Risiko</button>
         <button id="show-add-risk-btn" class="nav-btn">Tambah Risiko</button>
+        <button id="show-guidelines-btn" class="nav-btn">Pedoman Risiko</button>
         <div class="dropdown">
             <button class="nav-btn">Tautan Penting</button>
             <div class="dropdown-content">
@@ -57,7 +58,7 @@
         </div>
 
         <div id="add-risk-container" class="hidden">
-            <h2>Formulir Tambah Risiko Baru</h2>
+             <h2>Formulir Tambah Risiko Baru</h2>
             <form id="add-risk-form">
                 <div class="form-section">
                     <h3>1. Identifikasi Risiko</h3>
@@ -133,6 +134,208 @@
                 <button type="submit" class="submit-btn">Simpan Risiko</button>
             </form>
         </div>
+
+        <div id="guidelines-container" class="hidden">
+            <h2>Pedoman Penetapan Konteks Risiko</h2>
+
+            <div class="guideline-section">
+                <h3>1. Kriteria Risiko</h3>
+                <h4>a. Level Kriteria Kemungkinan</h4>
+                <p>Tingkat kemungkinan terjadinya suatu risiko dalam periode satu tahun.</p>
+                <table class="guideline-table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Kriteria</th>
+                            <th>Deskripsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>5</td>
+                            <td>Hampir Pasti Terjadi</td>
+                            <td>Peristiwa diperkirakan akan terjadi pada hampir semua kesempatan.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Sering Terjadi</td>
+                            <td>Peristiwa kemungkinan besar akan terjadi pada sebagian besar kesempatan.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Kadang Terjadi</td>
+                            <td>Peristiwa mungkin terjadi sewaktu-waktu.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jarang Terjadi</td>
+                            <td>Peristiwa mungkin terjadi tetapi hanya dalam keadaan luar biasa.</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Hampir Tidak Terjadi</td>
+                            <td>Peristiwa hanya dapat terjadi dalam keadaan yang sangat luar biasa.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 style="margin-top: 2rem;">b. Level Kriteria Dampak</h4>
+                <p>Tingkat pengaruh suatu risiko terhadap capaian tujuan organisasi.</p>
+                <table class="guideline-table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Kriteria</th>
+                            <th>Deskripsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>5</td>
+                            <td>Sangat Signifikan</td>
+                            <td>Pengaruh terhadap capaian tujuan sangat besar.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Signifikan</td>
+                            <td>Pengaruh terhadap capaian tujuan besar.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Moderat</td>
+                            <td>Pengaruh terhadap capaian tujuan sedang.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Minor</td>
+                            <td>Pengaruh terhadap capaian tujuan rendah.</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Tidak Signifikan</td>
+                            <td>Pengaruh terhadap capaian tujuan sangat rendah.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="guideline-section">
+                <h3>2. Matriks Analisis Risiko</h3>
+                <p>Matriks untuk menentukan skor risiko berdasarkan pertemuan antara tingkat kemungkinan dan tingkat dampak.</p>
+                <table class="risk-matrix-table">
+                    <caption>DAMPAK</caption>
+                    <thead>
+                        <tr>
+                            <th class="rotate"><div>KEMUNGKINAN</div></th>
+                            <th>1 (Tidak Signifikan)</th>
+                            <th>2 (Minor)</th>
+                            <th>3 (Moderat)</th>
+                            <th>4 (Signifikan)</th>
+                            <th>5 (Sangat Signifikan)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>5 (Hampir Pasti Terjadi)</th>
+                            <td class="sedang">9</td>
+                            <td class="tinggi">15</td>
+                            <td class="sangat-tinggi">18</td>
+                            <td class="sangat-tinggi">23</td>
+                            <td class="sangat-tinggi">25</td>
+                        </tr>
+                        <tr>
+                            <th>4 (Sering Terjadi)</th>
+                            <td class="rendah">6</td>
+                            <td class="tinggi">12</td>
+                            <td class="tinggi">16</td>
+                            <td class="sangat-tinggi">19</td>
+                            <td class="sangat-tinggi">24</td>
+                        </tr>
+                        <tr>
+                            <th>3 (Kadang Terjadi)</th>
+                            <td class="rendah">4</td>
+                            <td class="sedang">10</td>
+                            <td class="tinggi">14</td>
+                            <td class="tinggi">17</td>
+                            <td class="sangat-tinggi">22</td>
+                        </tr>
+                         <tr>
+                            <th>2 (Jarang Terjadi)</th>
+                            <td class="sangat-rendah">2</td>
+                            <td class="sedang">7</td>
+                            <td class="sedang">11</td>
+                            <td class="tinggi">13</td>
+                            <td class="sangat-tinggi">21</td>
+                        </tr>
+                        <tr>
+                            <th>1 (Hampir Tidak Terjadi)</th>
+                            <td class="sangat-rendah">1</td>
+                            <td class="rendah">3</td>
+                            <td class="sedang">5</td>
+                            <td class="sedang">8</td>
+                            <td class="sangat-tinggi">20</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="guideline-section">
+                <h3>3. Selera Risiko</h3>
+                <p>Tingkat risiko yang bersedia diterima oleh organisasi dalam upaya mencapai tujuannya.</p>
+                 <ul>
+                    <li>Risiko pada level **rendah** dan **sangat rendah** dapat diterima dan tidak perlu dilakukan proses mitigasi risiko.</li>
+                    <li>Risiko dengan level **sedang** hingga **sangat tinggi** harus ditangani untuk menurunkan level risikonya.</li>
+                </ul>
+            </div>
+
+             <div class="guideline-section">
+                <h3>4. Tabel Level Risiko</h3>
+                <p>Pengkategorian skor risiko ke dalam level-level risiko beserta warna indikator.</p>
+                <table class="guideline-table level-table">
+                     <thead>
+                        <tr>
+                            <th>Warna</th>
+                            <th>Level Risiko</th>
+                            <th>Besaran Skor Risiko</th>
+                            <th>Tindakan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="sangat-tinggi">
+                            <td>Merah</td>
+                            <td>Sangat Tinggi</td>
+                            <td>18 - 25</td>
+                            <td>Penanganan segera diperlukan.</td>
+                        </tr>
+                        <tr class="tinggi">
+                            <td>Oranye</td>
+                            <td>Tinggi</td>
+                            <td>12 - 17</td>
+                            <td>Perlu perhatian manajemen puncak dan tindakan perbaikan segera.</td>
+                        </tr>
+                        <tr class="sedang">
+                            <td>Kuning</td>
+                            <td>Sedang</td>
+                            <td>7 - 11</td>
+                            <td>Dikelola dengan prosedur rutin, namun perlu pemantauan.</td>
+                        </tr>
+                        <tr class="rendah">
+                            <td>Biru Muda</td>
+                            <td>Rendah</td>
+                            <td>3 - 6</td>
+                            <td>Diterima, dikelola dengan prosedur rutin.</td>
+                        </tr>
+                        <tr class="sangat-rendah">
+                            <td>Hijau</td>
+                            <td>Sangat Rendah</td>
+                            <td>1 - 2</td>
+                            <td>Diterima, tidak memerlukan tindakan lebih lanjut.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
     </main>
 
     <footer>
